@@ -1,0 +1,16 @@
+citHeader("To cite kpodclustr in publications, please use:")
+
+citEntry(entry = "Misc",
+  title = "kpodclustr: An R package for clustering partially observed data",
+  author = "Jocelyn T. Chi and Eric C. Chi",
+  note = "version 1.0",
+  year = "2014",
+  url = "http://jocelynchi.com/kpodclustr",
+
+  textVersion =
+  paste("Jocelyn T. Chi and Eric C. Chi.",
+        "kpodclustr: An R package for clustering partially observed data.",
+        "R package version 1.0.",
+        "2014.",
+        "URL http://jocelynchi.com/kpodclustr.")
+)

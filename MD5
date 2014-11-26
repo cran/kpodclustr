@@ -1,0 +1,11 @@
+82d296ea81a1896bb559383789b12a08 *DESCRIPTION
+ba5f5cf5e1dca4ca255068b14149c438 *LICENSE
+dba6233fd984782aa2e514e57365b1c1 *NAMESPACE
+053fd4aadbe32ba0875a2e991c694c07 *R/kpodclustr-package.r
+02e526b2b4d192288faa10ac5de2372f *inst/CITATION
+8c708a7353e88139a85bbfcd69ee92c6 *man/assign_clustpp.Rd
+ccb27ebd555daa4019c3672d03c699a2 *man/findMissing.Rd
+f166e09fe4638d2ab10da3f825457538 *man/initialImpute.Rd
+820d54fd51fc5ba3aeb5e19b33df2a48 *man/kmpp.Rd
+fa8b5f8738015ac365d01e6fd3b87b58 *man/kpod.Rd
+0119bbe72c824bfe7d6befbffc5e2727 *man/makeData.Rd
