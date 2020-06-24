@@ -31,9 +31,9 @@ makeData <- function(p,n,k,sigma,missing,seed=12345){
   
   # Make complete data
   set.seed(seed)
-  M <- matrix(rnorm(k*p),k,p)
+  M <- matrix(stats::rnorm(k*p),k,p)
   assignment <- sample(1:k,n,replace=TRUE)
-  X <- M[assignment,] + sigma*matrix(rnorm(n*p),n,p)
+  X <- M[assignment,] + sigma*matrix(stats::rnorm(n*p),n,p)
   
   # Make missing data
   X_missing <- X
@@ -68,7 +68,7 @@ makeData <- function(p,n,k,sigma,missing,seed=12345){
 #' 
 #' @author Jocelyn T. Chi
 assign_clustpp <- function(X,init_centers,kmpp_flag=TRUE,max_iter=20){
-  res <- kmeans(X, init_centers)
+  res <- stats::kmeans(X, init_centers)
   clusts <- res$cluster
   obj <- res$totss
   fit <- 1-(sum(res$withinss)/res$totss)
@@ -77,7 +77,7 @@ assign_clustpp <- function(X,init_centers,kmpp_flag=TRUE,max_iter=20){
     ## Try to find a better assignment
     for (iter in 1:max_iter) {
       centers_kmpp <- kmpp(X,length(res$size))
-      sol <- kmeans(X, centers_kmpp)
+      sol <- stats::kmeans(X, centers_kmpp)
       if (sol$totss < obj) {
         obj <- sol$totss
         clusts <- sol$cluster
@@ -160,8 +160,6 @@ initialImpute <- function(X){
 #' 
 #' @export
 #' 
-#' @import clues
-#' 
 #' @examples
 #' p <- 5
 #' n <- 200
@@ -194,7 +192,7 @@ kpod <- function(X,k,kmpp_flag=TRUE,maxiter=100){
   
   ## Use kmpp to select initial centers
   init_centers <- kmpp(X_copy, k)
-  temp <- kmeans(X_copy,init_centers)
+  temp <- stats::kmeans(X_copy,init_centers)
   clusts <- temp$cluster
   centers <- temp$centers
   fit[1] <- 1-(sum(temp$withinss)/temp$totss)
